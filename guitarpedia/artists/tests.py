@@ -40,6 +40,7 @@ class GuitarristViewTest(TestCase):
     def setUp(self):
         guitarrist = Guitarrist()
         guitarrist.name = u'Kiko Loureiro'
+        guitarrist.slug = u'kiko-loureiro'
         guitarrist.website = u'http://www.kikoloureiro.com.br'
         guitarrist.biography = u'''Pedro Henrique Loureiro, mais conhecido 
             como Kiko Loureiro (Rio de Janeiro, 16 de Junho de 1972), é 
@@ -57,4 +58,8 @@ class GuitarristViewTest(TestCase):
     
     def test_guitarrist_list(self):
         response = self.client.get('/guitarrists/')
+        assert u'Kiko Loureiro' in response.content
+        
+    def test_guitarrist_detail(self):
+        response = self.client.get('/guitarrists/kiko-loureiro/')
         assert u'Kiko Loureiro' in response.content

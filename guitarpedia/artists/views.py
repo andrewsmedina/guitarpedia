@@ -7,3 +7,10 @@ def guitarrists(request):
         'guitarrists': Guitarrist.objects.all()
     }
     return render_to_response('artists/guitarrists.html', context)
+
+def guitarrist(request, slug):
+    
+    context = {
+        'guitarrist': Guitarrist.objects.get(slug=slug)
+    }
+    return render_to_response('artists/guitarrist.html', context)

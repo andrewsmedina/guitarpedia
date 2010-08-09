@@ -11,6 +11,7 @@ class Band(models.Model):
 class Guitarrist(models.Model):
 
     name = models.CharField(max_length=255)
+    slug = models.SlugField()
     website = models.URLField(verify_exists=True, null=True)
     biography = models.TextField(null=True)
     date_of_birthday = models.DateField(null=True)
