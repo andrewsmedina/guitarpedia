@@ -53,4 +53,5 @@ INSTALLED_APPS = (
     'south',
     
     'artists',
+    'home',
 )
