@@ -1,14 +1,10 @@
 from django.conf.urls.defaults import *
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
-
 urlpatterns = patterns('',
 
     url(r'^$', 'home.views.index', name='index'),
-    # Example:
-    # (r'^guitarpedia/', include('guitarpedia.foo.urls')),
+
+    (r'^guitarrists/', include('artists.urls')),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:
